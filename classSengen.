@@ -68,3 +68,40 @@ class My{
 	}
 	String s = "foo";
 }
+
+
+//他のクラスからフィールドにアクセス
+class You {
+	void doit() {
+		My my = new My();
+		System.out.println(my.s); //フィールドsにアクセス
+	}
+}
+
+
+class My {
+	String s = "foo";
+	void method(String s){
+		System.out.println(s);//パラメータ変数
+		System.out.println(this.s);//フィールド変数
+	}
+	void method2(){
+		String s = "bar";
+		System.out.println(s);//ローカル変数
+		System.out.println(this.s);//フィールド変数
+	}
+	My(string s){
+		System.out.println(s);//ローカル変数
+		System.out.println(this.s);//フィールド変数
+	}
+	My (){
+		String s = "bar";
+		System.out.println(s);//ローカル変数
+		System.out.println(this.s);//フィールド変数
+	}
+
+}
+
+
+
+//メソッドのオーバーライド
