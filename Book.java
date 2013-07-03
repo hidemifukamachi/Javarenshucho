@@ -5,7 +5,7 @@ class Book{
 	Date published;
 
 	void printTitle(){
-		System.out.println(this.title)
+		System.out.println(this.title);
 	}
 }
 //書物クラスの利用例
@@ -16,3 +16,4 @@ Book book2 = new Book();
 book2.title = "showstopper";
 System.out.println(book2.title);
 
+    

@@ -1,0 +1,70 @@
+//継承のないクラスの宣言文法
+[修飾子] class クラス名{
+	メンバ宣言
+		-フィールド宣言
+		-メソッド宣言
+		-ネストしたクラスの宣言およびネストしたインターフェイス宣言
+	コンストラクタの宣言
+	初期化ブロック
+}
+
+
+
+//フィールド変数初期化のコード実行のタイミング
+class My{
+	long created = System.currentTimeMillis();
+
+	public static void main(String[] args) throws Exeption {
+		My my1 = new My();
+		System.out.println(my1.created);
+		Thread.sleep(1000);
+		My my2 = new My();
+		System.out.println(my2.created);
+
+	}
+}
+
+//コンストラクタの中でフィールド変数を初期化する定石
+class My {
+	int i;
+	String s;
+	public My(int i, String s){
+		this.i = i;
+		this.s = s;
+	}
+}
+
+//フィールド変数ｓを使用する
+class My{
+	//フィールドの宣言
+	String s = "foo";
+	//（他の）フィールド変数の初期化子でｓを使用
+	String s2 = s;
+	//メッソドでsを使用
+	void method(){
+		System.out.println(s);
+	}
+	//コンストラクタでsを使用
+	 My(){
+		System.out.println(s);
+	}
+	//初期化ブロックでsを使用
+	{
+		System.out.println(s);
+	}
+}
+
+
+
+//フィールド変数でsを使用する
+class My{
+	// メソッドでｓを使用
+	void method(){
+		System.out.println(s);
+	}
+	//コンストラクタでsを使用
+	My(){
+			System.out.println(s);
+	}
+	String s = "foo";
+}
